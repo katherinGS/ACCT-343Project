@@ -3,126 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katherin’s Designer Collection</title>
+<title>Katherin’s Vitamin Store</title>
 
 <style>
 :root{
---black: #0A0A0A;
---white: #FFFFFF;
---blue: #1E90FF; /* Azul elegante */
---blue-dark: #0D47A1; /* Azul profundo */
---blue-light: #64B5F6; /* Azul claro */
---gray-bg: #F4F4F4;
+--green:#2ECC71; /* Fresh green */
+--darkgreen:#145A32; /* Deep green for contrast */
+--white:#FFFFFF;
+--gray:#F6F6F6;
+--black:#111111;
 }
 
-/* Estructura general */
 body{
 margin:0;
-background-color: var(--gray-bg);
-color: var(--black);
-font-family: 'Poppins', sans-serif;
-text-align: center;
+font-family:'Poppins',sans-serif;
+background-color:var(--gray);
+color:var(--black);
+text-align:center;
 }
 
-/* Encabezado */
+/* HEADER */
 header{
-background: linear-gradient(135deg, var(--black), var(--blue-dark));
-color: var(--white);
-padding: 50px 20px;
-text-transform: uppercase;
-letter-spacing: 2px;
-box-shadow: 0 4px 10px rgba(0,0,0,.3);
+background:linear-gradient(135deg,var(--darkgreen),var(--green));
+color:var(--white);
+padding:50px 20px;
+text-transform:uppercase;
+letter-spacing:2px;
 }
 header h1{
-font-size: 2rem;
-margin-bottom: 10px;
+margin-bottom:10px;
 }
 header p{
-color: var(--blue-light);
-font-size: 1.1rem;
-letter-spacing: 1px;
+font-size:1.1rem;
+text-transform:none;
+letter-spacing:1px;
 }
 
-/* Títulos */
+/* PRODUCTS */
+.products{
+padding:50px 20px;
+}
 h2{
-color: var(--blue-dark);
-margin-top: 40px;
-text-transform: uppercase;
-letter-spacing: 1px;
+color:var(--darkgreen);
+text-transform:uppercase;
+letter-spacing:1px;
 }
-
-/* Galería */
-.gallery{
-padding: 50px 0;
-}
-.models{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 30px;
-margin-top: 20px;
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:30px;
 }
 .card{
-background: var(--white);
-border-radius: 12px;
-box-shadow: 0 4px 10px rgba(0,0,0,.15);
-width: 250px;
-padding: 15px;
-transition: transform 0.2s ease;
+background:var(--white);
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+width:250px;
+padding:15px;
+transition:transform 0.2s ease;
 }
 .card:hover{
-transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0,0,0,.2);
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
 .card img{
-width: 100%;
-height: 300px;
-object-fit: cover;
-border-radius: 10px;
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
 }
 .card h3{
-margin: 10px 0;
-color: var(--blue-dark);
+margin:12px 0 6px;
+color:var(--darkgreen);
+}
+.price{
+color:var(--green);
+font-weight:bold;
+margin-bottom:10px;
+}
+.btn-buy{
+background:var(--green);
+color:var(--white);
+border:none;
+border-radius:999px;
+padding:10px 18px;
+text-transform:uppercase;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
+}
+.btn-buy:hover{
+background:var(--darkgreen);
 }
 
-/* Botón azul */
-.btn-blue{
-background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-color: var(--white);
-border: none;
-border-radius: 999px;
-padding: 10px 18px;
-font-weight: bold;
-text-transform: uppercase;
-box-shadow: 0 4px 10px rgba(0,0,0,.25);
-cursor: pointer;
-transition: 0.2s;
+/* ABOUT */
+.about{
+background-color:var(--white);
+padding:60px 20px;
 }
-.btn-blue:hover{
-filter: brightness(1.1);
-box-shadow: 0 6px 16px rgba(0,0,0,.3);
+.about p{
+max-width:600px;
+margin:0 auto;
+line-height:1.6;
+color:#444;
 }
 
-/* Sección negra */
-.section-dark{
-background-color: var(--black);
-color: var(--white);
-padding: 60px 20px;
-}
-.section-dark p{
-max-width: 600px;
-margin: 20px auto;
-line-height: 1.6;
-color: var(--blue-light);
-}
-
-/* Footer */
+/* FOOTER */
 footer{
-background-color: var(--black);
-color: var(--white);
-padding: 20px;
-font-size: 0.9rem;
-border-top: 2px solid var(--blue);
+background-color:var(--darkgreen);
+color:var(--white);
+padding:20px;
+font-size:0.9rem;
 }
 </style>
 </head>
@@ -130,42 +122,45 @@ border-top: 2px solid var(--blue);
 <body>
 
 <header>
-<h1>Katherin’s Designer Collection</h1>
-<p>Luxury Fashion & Modern Style</p>
+<h1>Katherin’s Vitamin Store</h1>
+<p>Boost your health with our premium supplements</p>
 </header>
 
-<section class="gallery">
-<h2>Featured Models</h2>
-<div class="models">
+<section class="products">
+<h2>Best Sellers</h2>
+<div class="grid">
 <div class="card">
-<img src="images/model1.jpg" alt="Model 1">
-<h3>Model 1</h3>
-<button class="btn-blue">View Look</button>
+<img src="images/vitamin1.jpg" alt="Vitamin C">
+<h3>Vitamin C 1000mg</h3>
+<p class="price">$19.99</p>
+<button class="btn-buy">Add to Cart</button>
 </div>
 <div class="card">
-<img src="images/model2.jpg" alt="Model 2">
-<h3>Model 2</h3>
-<button class="btn-blue">View Look</button>
+<img src="images/vitamin2.jpg" alt="Omega 3">
+<h3>Omega-3 Fish Oil</h3>
+<p class="price">$24.99</p>
+<button class="btn-buy">Add to Cart</button>
 </div>
 <div class="card">
-<img src="images/model3.jpg" alt="Model 3">
-<h3>Model 3</h3>
-<button class="btn-blue">View Look</button>
+<img src="images/vitamin3.jpg" alt="Multivitamin">
+<h3>Daily Multivitamin</h3>
+<p class="price">$14.99</p>
+<button class="btn-buy">Add to Cart</button>
 </div>
 </div>
 </section>
 
-<section class="section-dark">
-<h2>About Katherin’s Boutique</h2>
+<section class="about">
+<h2>About Us</h2>
 <p>
-Discover modern elegance with Katherin’s Boutique.
-Our collection combines contemporary design with timeless luxury —
-crafted for confident women who love bold fashion in black, blue, and white.
+At Katherin’s Vitamin Store, we believe in natural nutrition and holistic wellness.
+Our mission is to provide high-quality vitamins and supplements made with the best ingredients
+— supporting your energy, immunity, and vitality every day.
 </p>
 </section>
 
 <footer>
-<p>© <span id="year"></span> Katherin’s Boutique · All Rights Reserved</p>
+<p>© <span id="year"></span> Katherin’s Vitamin Store · All rights reserved</p>
 </footer>
 
 <script>
