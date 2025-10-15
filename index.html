@@ -7,18 +7,18 @@
 
 <style>
 :root{
---black: #111111;
+--black: #0A0A0A;
 --white: #FFFFFF;
---offwhite: #F7F7F7;
---gold: #C8A96A;
---gold-dark: #9F8146;
---gold-light: #E6D8A8;
+--blue: #1E90FF; /* Azul elegante */
+--blue-dark: #0D47A1; /* Azul profundo */
+--blue-light: #64B5F6; /* Azul claro */
+--gray-bg: #F4F4F4;
 }
 
 /* Estructura general */
 body{
 margin:0;
-background-color: var(--offwhite);
+background-color: var(--gray-bg);
 color: var(--black);
 font-family: 'Poppins', sans-serif;
 text-align: center;
@@ -26,22 +26,26 @@ text-align: center;
 
 /* Encabezado */
 header{
-background-color: var(--black);
-color: var(--gold);
-padding: 40px 20px;
+background: linear-gradient(135deg, var(--black), var(--blue-dark));
+color: var(--white);
+padding: 50px 20px;
 text-transform: uppercase;
 letter-spacing: 2px;
+box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+header h1{
+font-size: 2rem;
+margin-bottom: 10px;
 }
 header p{
-color: var(--white);
+color: var(--blue-light);
 font-size: 1.1rem;
-text-transform: none;
 letter-spacing: 1px;
 }
 
 /* Títulos */
 h2{
-color: var(--gold);
+color: var(--blue-dark);
 margin-top: 40px;
 text-transform: uppercase;
 letter-spacing: 1px;
@@ -49,7 +53,7 @@ letter-spacing: 1px;
 
 /* Galería */
 .gallery{
-padding: 40px 0;
+padding: 50px 0;
 }
 .models{
 display: flex;
@@ -61,14 +65,14 @@ margin-top: 20px;
 .card{
 background: var(--white);
 border-radius: 12px;
-box-shadow: 0 4px 10px rgba(0,0,0,.1);
+box-shadow: 0 4px 10px rgba(0,0,0,.15);
 width: 250px;
 padding: 15px;
 transition: transform 0.2s ease;
 }
 .card:hover{
 transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0,0,0,.15);
+box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 .card img{
 width: 100%;
@@ -78,29 +82,25 @@ border-radius: 10px;
 }
 .card h3{
 margin: 10px 0;
-color: var(--black);
+color: var(--blue-dark);
 }
 
-/* Botón dorado */
-.btn-gold{
-background: linear-gradient(135deg,
-var(--gold-dark) 0%,
-var(--gold) 40%,
-var(--gold-light) 70%,
-var(--gold) 100%);
-color: var(--black);
-border: 1px solid var(--gold-dark);
+/* Botón azul */
+.btn-blue{
+background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+color: var(--white);
+border: none;
 border-radius: 999px;
 padding: 10px 18px;
 font-weight: bold;
 text-transform: uppercase;
-box-shadow: 0 4px 10px rgba(0,0,0,.2);
+box-shadow: 0 4px 10px rgba(0,0,0,.25);
 cursor: pointer;
 transition: 0.2s;
 }
-.btn-gold:hover{
-filter: brightness(.95);
-box-shadow: 0 6px 14px rgba(0,0,0,.25);
+.btn-blue:hover{
+filter: brightness(1.1);
+box-shadow: 0 6px 16px rgba(0,0,0,.3);
 }
 
 /* Sección negra */
@@ -113,6 +113,7 @@ padding: 60px 20px;
 max-width: 600px;
 margin: 20px auto;
 line-height: 1.6;
+color: var(--blue-light);
 }
 
 /* Footer */
@@ -121,7 +122,7 @@ background-color: var(--black);
 color: var(--white);
 padding: 20px;
 font-size: 0.9rem;
-border-top: 1px solid var(--gold-dark);
+border-top: 2px solid var(--blue);
 }
 </style>
 </head>
@@ -139,17 +140,17 @@ border-top: 1px solid var(--gold-dark);
 <div class="card">
 <img src="images/model1.jpg" alt="Model 1">
 <h3>Model 1</h3>
-<button class="btn-gold">View Look</button>
+<button class="btn-blue">View Look</button>
 </div>
 <div class="card">
 <img src="images/model2.jpg" alt="Model 2">
 <h3>Model 2</h3>
-<button class="btn-gold">View Look</button>
+<button class="btn-blue">View Look</button>
 </div>
 <div class="card">
 <img src="images/model3.jpg" alt="Model 3">
 <h3>Model 3</h3>
-<button class="btn-gold">View Look</button>
+<button class="btn-blue">View Look</button>
 </div>
 </div>
 </section>
@@ -157,8 +158,9 @@ border-top: 1px solid var(--gold-dark);
 <section class="section-dark">
 <h2>About Katherin’s Boutique</h2>
 <p>
-A curated collection of timeless fashion pieces that blend elegance with confidence.
-Each design is selected for women who want to shine with grace and style.
+Discover modern elegance with Katherin’s Boutique.
+Our collection combines contemporary design with timeless luxury —
+crafted for confident women who love bold fashion in black, blue, and white.
 </p>
 </section>
 
