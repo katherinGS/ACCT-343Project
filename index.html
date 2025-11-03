@@ -3,169 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katherin’s Vitamin Store</title>
-
+<title>Vitamins Boutique</title>
 <style>
-:root{
---green:#2ECC71; /* Fresh green */
---darkgreen:#145A32; /* Deep green for contrast */
---white:#FFFFFF;
---gray:#F6F6F6;
---black:#111111;
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #ffeaf2;
+color: #111;
+margin: 0;
+padding: 0;
 }
 
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background-color:var(--gray);
-color:var(--black);
-text-align:center;
+header {
+background-color: #ffc0cb;
+color: #111;
+text-align: center;
+padding: 40px 20px;
 }
 
-/* HEADER */
-header{
-background:linear-gradient(135deg,var(--darkgreen),var(--green));
-color:var(--white);
-padding:50px 20px;
-text-transform:uppercase;
-letter-spacing:2px;
-}
-header h1{
-margin-bottom:10px;
-}
-header p{
-font-size:1.1rem;
-text-transform:none;
-letter-spacing:1px;
+header h1 {
+margin: 0;
+font-size: 2.2em;
+letter-spacing: 1px;
 }
 
-/* PRODUCTS */
-.products{
-padding:50px 20px;
-}
-h2{
-color:var(--darkgreen);
-text-transform:uppercase;
-letter-spacing:1px;
-}
-.grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-margin-top:30px;
-}
-.card{
-background:var(--white);
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,.1);
-width:250px;
-padding:15px;
-transition:transform 0.2s ease;
-}
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-}
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
-}
-.card h3{
-margin:12px 0 6px;
-color:var(--darkgreen);
-}
-.price{
-color:var(--green);
-font-weight:bold;
-margin-bottom:10px;
-}
-.btn-buy{
-background:var(--green);
-color:var(--white);
-border:none;
-border-radius:999px;
-padding:10px 18px;
-text-transform:uppercase;
-font-weight:bold;
-cursor:pointer;
-transition:0.2s;
-}
-.btn-buy:hover{
-background:var(--darkgreen);
+header p {
+margin-top: 8px;
+font-size: 1.1em;
 }
 
-/* ABOUT */
-.about{
-background-color:var(--white);
-padding:60px 20px;
-}
-.about p{
-max-width:600px;
-margin:0 auto;
-line-height:1.6;
-color:#444;
+main {
+max-width: 1100px;
+margin: 0 auto;
+padding: 40px 20px;
 }
 
-/* FOOTER */
-footer{
-background-color:var(--darkgreen);
-color:var(--white);
-padding:20px;
-font-size:0.9rem;
+h2 {
+text-align: center;
+color: #cc2b5e;
+font-size: 1.8em;
+margin-bottom: 30px;
+}
+
+.products {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.product {
+background-color: white;
+border-radius: 15px;
+width: 280px;
+text-align: center;
+padding: 20px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+transform: translateY(-6px);
+box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+width: 230px;
+height: auto;
+margin-bottom: 15px;
+}
+
+.product h3 {
+color: #111;
+margin-bottom: 8px;
+font-size: 1.3em;
+}
+
+.product p {
+font-size: 0.95em;
+color: #333;
+}
+
+section#contact {
+background-color: #ffd6e1;
+border-radius: 20px;
+padding: 30px;
+margin-top: 60px;
+}
+
+section#contact h2 {
+color: #cc2b5e;
+}
+
+.contact-info {
+text-align: center;
+font-size: 1.1em;
+line-height: 1.8;
+}
+
+footer {
+background-color: #ffc0cb;
+color: #111;
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.products {
+flex-direction: column;
+align-items: center;
+}
+
+.product {
+width: 85%;
+}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-<h1>Katherin’s Vitamin Store</h1>
-<p>Boost your health with our premium supplements</p>
+<h1>Vitamins Boutique</h1>
+<p>Natural Beauty · Energy · Health</p>
 </header>
 
-<section class="products">
-<h2>Best Sellers</h2>
-<div class="grid">
-<div class="card">
-<img src="images/vitamin1.jpg" alt="Vitamin C">
-<h3>Vitamin C 1000mg</h3>
-<p class="price">$19.99</p>
-<button class="btn-buy">Add to Cart</button>
+<main>
+<section id="products">
+<h2>Our Products</h2>
+
+<div class="products">
+<div class="product">
+<img src="images/vitamin-d3.png" alt="Vitamin D3">
+<h3>Vitamin D3</h3>
+<p>Supports your immune system and mood naturally.</p>
 </div>
-<div class="card">
-<img src="images/vitamin2.jpg" alt="Omega 3">
-<h3>Omega-3 Fish Oil</h3>
-<p class="price">$24.99</p>
-<button class="btn-buy">Add to Cart</button>
+
+<div class="product">
+<img src="images/magnesium.png" alt="Magnesium">
+<h3>Magnesium</h3>
+<p>Promotes calmness, balance, and daily energy.</p>
 </div>
-<div class="card">
-<img src="images/vitamin3.jpg" alt="Multivitamin">
-<h3>Daily Multivitamin</h3>
-<p class="price">$14.99</p>
-<button class="btn-buy">Add to Cart</button>
+
+<div class="product">
+<img src="images/omega-3.png" alt="Omega-3">
+<h3>Omega-3</h3>
+<p>Improves heart and brain function with golden softgels.</p>
 </div>
 </div>
 </section>
 
-<section class="about">
-<h2>About Us</h2>
-<p>
-At Katherin’s Vitamin Store, we believe in natural nutrition and holistic wellness.
-Our mission is to provide high-quality vitamins and supplements made with the best ingredients
-— supporting your energy, immunity, and vitality every day.
-</p>
+<section id="contact">
+<h2>Contact & Location</h2>
+<div class="contact-info">
+📍 123 Rose Avenue, Queens, NY 11367<br>
+☎️ +1 (718) 555-0123<br>
+✉️ hello@vitaminsboutique.demo<br>
+🕒 Monday – Saturday: 10 AM – 7 PM<br>
+🕒 Sunday: 11 AM – 5 PM
+</div>
 </section>
+</main>
 
 <footer>
-<p>© <span id="year"></span> Katherin’s Vitamin Store · All rights reserved</p>
+<p>© 2025 Vitamins Boutique | Designed by Katherin Giraldo</p>
 </footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
 </body>
 </html>
