@@ -5,17 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitamins Shop</title>
 <style>
+:root {
+--pink-soft: #ffeaf2;
+--pink-header: #ffc0cb;
+--pink-accent: #ff1493; /* fucsia intenso */
+--text: #111;
+}
+
 body {
-font-family: 'Poppins', sans-serif;
-background-color: #ffeaf2;
-color: #111;
+font-family: "Poppins", sans-serif;
+background: var(--pink-soft);
+color: var(--text);
 margin: 0;
 padding: 0;
 }
 
 header {
-background-color: #ffc0cb;
-color: #111;
+background: var(--pink-header);
+color: var(--text);
 text-align: center;
 padding: 40px 20px;
 }
@@ -39,12 +46,12 @@ padding: 40px 20px;
 
 h2 {
 text-align: center;
-color: #cc2b5e;
+color: var(--pink-accent);
 font-size: 1.8em;
 margin-bottom: 30px;
 }
 
-.products {
+.products, .more-products {
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
@@ -52,18 +59,16 @@ gap: 40px;
 }
 
 .product {
-background-color: white;
+background: transparent; /* sin fondo blanco */
 border-radius: 15px;
 width: 280px;
 text-align: center;
 padding: 20px;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+transition: transform 0.3s ease;
 }
 
 .product:hover {
-transform: translateY(-6px);
-box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+transform: translateY(-5px);
 }
 
 .product img {
@@ -73,55 +78,68 @@ margin-bottom: 15px;
 }
 
 .product h3 {
-color: #111;
+color: var(--text);
 margin-bottom: 8px;
 font-size: 1.3em;
 }
 
 .product p {
-font-size: 0.95em;
 color: #333;
+font-size: 0.95em;
+margin: 0;
 }
 
-section#contact {
+/* Botón fucsia */
+.btn {
+display: inline-block;
+background: var(--pink-accent);
+color: white;
+border: none;
+border-radius: 30px;
+padding: 12px 22px;
+font-size: 1rem;
+cursor: pointer;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+background: #d9007e;
+transform: translateY(-2px);
+}
+
+.btn-container {
+text-align: center;
+margin-top: 30px;
+}
+
+#contact {
 background-color: #ffd6e1;
 border-radius: 20px;
 padding: 30px;
 margin-top: 60px;
 }
 
-section#contact h2 {
-color: #cc2b5e;
-}
-
-.contact-info {
+#contact .contact-info {
 text-align: center;
 font-size: 1.1em;
 line-height: 1.8;
 }
 
 footer {
-background-color: #ffc0cb;
-color: #111;
+background-color: var(--pink-header);
+color: var(--text);
 text-align: center;
 padding: 20px;
 margin-top: 40px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-.products {
-flex-direction: column;
-align-items: center;
-}
-
 .product {
 width: 85%;
 }
 }
 </style>
 </head>
-
 <body>
 <header>
 <h1>Vitamins Shop</h1>
@@ -129,6 +147,7 @@ width: 85%;
 </header>
 
 <main>
+<!-- Sección de productos -->
 <section id="products">
 <h2>Our Products</h2>
 
@@ -136,7 +155,7 @@ width: 85%;
 <div class="product">
 <img src="images/vitamin-d3.png" alt="Vitamin D3">
 <h3>Vitamin D3</h3>
-<p>Supports your immune system and mood naturally.</p>
+<p>Supports immune system and mood balance.</p>
 </div>
 
 <div class="product">
@@ -148,11 +167,36 @@ width: 85%;
 <div class="product">
 <img src="images/omega-3.png" alt="Omega-3">
 <h3>Omega-3</h3>
-<p>Improves heart and brain function with golden softgels.</p>
+<p>Supports heart and brain with golden softgels.</p>
+</div>
+</div>
+
+<!-- Botón fucsia -->
+<div class="btn-container">
+<button class="btn" id="moreBtn">More Products</button>
+</div>
+</section>
+
+<!-- Productos adicionales -->
+<section id="moreProducts" style="display:none; margin-top:40px;">
+<h2>More Products</h2>
+
+<div class="more-products">
+<div class="product">
+<img src="images/collagen-pouch.png" alt="Collagen Peptides">
+<h3>Collagen Peptides</h3>
+<p>Beauty & joint support in a premium pink pouch.</p>
+</div>
+
+<div class="product">
+<img src="images/greens-powder.png" alt="Dehydrated Veggies">
+<h3>Dehydrated Veggies</h3>
+<p>Daily greens blend with energy and antioxidants.</p>
 </div>
 </div>
 </section>
 
+<!-- Contacto -->
 <section id="contact">
 <h2>Contact & Location</h2>
 <div class="contact-info">
@@ -168,5 +212,22 @@ width: 85%;
 <footer>
 <p>© 2025 Vitamins Shop | Designed by Katherin Giraldo</p>
 </footer>
+
+<script>
+// Mostrar u ocultar los productos adicionales
+const btn = document.getElementById("moreBtn");
+const moreSection = document.getElementById("moreProducts");
+
+btn.addEventListener("click", () => {
+if (moreSection.style.display === "none") {
+moreSection.style.display = "block";
+btn.textContent = "Hide Products";
+} else {
+moreSection.style.display = "none";
+btn.textContent = "More Products";
+}
+});
+</script>
 </body>
 </html>
+
